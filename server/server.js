@@ -7,7 +7,6 @@ const path = require('path')
 const helmet = require('helmet')
 const history = require('connect-history-api-fallback')
 const compression = require('compression')
-const morgan = require('morgan')
 
 let app = express()
 var server = http.createServer(app)
@@ -20,7 +19,6 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cookieParser())
 app.use(helmet())
-app.use(morgan('dev'))
 app.use(compression())
 
 app.use((req, res, next) => {
@@ -31,6 +29,9 @@ app.use((req, res, next) => {
 app.use(express.static(path.join(__dirname, '/public')))
 
 io.on('connection', (socket) => {
+  socket.on('data', (data) => {
+    console.log(data)
+  })
   // socket.on('newDocument', () => {
   //   io.emit('newDocument')
   // })
