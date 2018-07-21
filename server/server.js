@@ -29,9 +29,16 @@ app.use((req, res, next) => {
 app.use(express.static(path.join(__dirname, '/public')))
 
 io.on('connection', (socket) => {
-  socket.on('data', (data) => {
-    console.log(data)
+  socket.on('temperature', (temperature) => {
+    console.log(temperature)
+    io.emit('temperature', temperature)
   })
+
+  socket.on('humidity', (humidity) => {
+    console.log(humidity)
+    io.emit('humidity', humidity)
+  })
+
   // socket.on('newDocument', () => {
   //   io.emit('newDocument')
   // })
