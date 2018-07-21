@@ -30,12 +30,10 @@ app.use(express.static(path.join(__dirname, '/public')))
 
 io.on('connection', (socket) => {
   socket.on('temperature', (temperature) => {
-    console.log(temperature)
     io.emit('temperature', temperature)
   })
 
   socket.on('humidity', (humidity) => {
-    console.log(humidity)
     io.emit('humidity', humidity)
   })
 
