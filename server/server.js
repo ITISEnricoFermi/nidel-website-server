@@ -45,6 +45,10 @@ io.on('connection', (socket) => {
     io.emit('humidity_external', humidity)
   })
 
+  socket.on('camera', (frame) => {
+    io.emit('camera', frame)
+  })
+
   // socket.on('newDocument', () => {
   //   io.emit('newDocument')
   // })
