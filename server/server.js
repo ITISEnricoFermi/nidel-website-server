@@ -45,6 +45,18 @@ io.on('connection', (socket) => {
     io.emit('humidity_external', humidity)
   })
 
+  socket.on('gas', (gas) => {
+    io.emit('gas', gas)
+  })
+
+  socket.on('lum_internal', (lum) => {
+    io.emit('lum_internal', lum)
+  })
+
+  socket.on('lum_external', (lum) => {
+    io.emit('lum_external', lum)
+  })
+
   socket.on('camera', (frame) => {
     io.emit('camera', frame)
   })
