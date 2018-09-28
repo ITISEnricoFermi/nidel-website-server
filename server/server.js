@@ -46,6 +46,7 @@ io.on('connection', (socket) => {
   })
 
   socket.on('gas', (gas) => {
+    console.log(gas)
     io.emit('gas', gas)
   })
 
