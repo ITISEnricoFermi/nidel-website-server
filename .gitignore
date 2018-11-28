@@ -8,3 +8,5 @@ server/public/pics/*
 
 !server/public/public/documents/.gitkeep
 !server/public/pics/.gitkeep
+
+server/config/env/env.json
