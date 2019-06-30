@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/ITISEnricoFermi/nidel-website-server#readme",
   "dependencies": {
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.19.0",
     "colors": "^1.3.3",
     "compression": "^1.7.3",
     "connect-history-api-fallback": "^1.6.0",
